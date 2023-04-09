@@ -1,0 +1,17 @@
+<div class="border border-2 border-secondary">
+    <div class="bg-info text-center">component-input.component</div>
+    <div class="p-2">
+        <app-simple-table0 [userData]="userData"></app-simple-table0>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button (click)="sortByAgeDesc()" class="btn btn-primary btn-sm">Age desc</button>
+        </div>
+        <div (click)="sortByAgeAsc()" class="col"><button class="btn btn-primary btn-sm">Age asc</button>
+        </div>
+        <div (click)="sortByAgeDescLastDesc()" class="col"><button class="btn btn-primary btn-sm">Age Last desc</button>
+        </div>
+        <div (click)="init()" class="col"><button class="btn btn-danger btn-sm">Init</button>
+        </div>
+    </div>
+</div>  
