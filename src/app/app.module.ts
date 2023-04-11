@@ -6,9 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { GreetingComponent } from './greeting/greeting.component';
-import { OneWayBindComponent } from './one-way-bind/one-way-bind.component';
-import { EventBindComponent } from './event-bind/event-bind.component';
-import { TwoWayBindComponent } from './two-way-bind/two-way-bind.component';
 import { TemplateVariablesComponent } from './template-variables/template-variables.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { ComponentInputComponent } from './component-input/component-input.component';
@@ -24,10 +21,11 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 
 
 const routes: Routes = [
+  {path: 'bind-examples', 
+  loadChildren:()=> import('./bind-examples-module/bind-examples-module').then(
+    module=>module.BindExamplesModule),
+  },
   {path: 'greeting', component: GreetingComponent},
-  {path: 'one-way-bind', component: OneWayBindComponent},
-  {path:'event-bind', component: EventBindComponent},
-  {path:'two-way-bind', component: TwoWayBindComponent},
   {path:'structural-directives', component: StructuralDirectivesComponent},
   {path:'template-variables', component: TemplateVariablesComponent},
   {path:'component-input', component: ComponentInputComponent},
@@ -44,9 +42,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     GreetingComponent,
-    OneWayBindComponent,
-    EventBindComponent,
-    TwoWayBindComponent,
     TemplateVariablesComponent,
     StructuralDirectivesComponent,
     ComponentInputComponent,

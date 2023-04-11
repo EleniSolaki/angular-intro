@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SideBar } from './app-interfaces';
+import { SideBar as MenuEntry } from './app-interfaces';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-introduction';
-  sideBarMenu:SideBar[] = [
+  sideBarMenu:MenuEntry[] = [
     {text:'Greeting' , path: 'greeting'},
-    {text:'One way bind' , path: 'one-way-bind'},
-    {text:'Event Bind' , path: 'event-bind'},
-    {text:'Two way Bind' , path: 'two-way-bind'},
     {text:'Structural Directives' , path: 'structural-directives'},
     {text:'Template Variables' , path: 'template-variables'},
     {text:'Component Input' , path: 'component-input'},
@@ -21,6 +18,12 @@ export class AppComponent {
     {text: 'Reactive Forms', path: 'reactive-forms'},
     {text: 'Template Forms', path: 'template-forms'},
     {text:' Chuck Norris Joke', path: 'chuck-norris-joke'}
+  ]
+
+  topBindExamplesMenu: MenuEntry[]=[
+    {text:'One way bind' , path: 'bind-examples/one-way-bind'},
+    {text:'Event Bind' , path: 'bind-examples/event-bind'},
+    {text:'Two way Bind' , path: 'bind-examples/two-way-bind'},
   ]
 
   currentPath = '';
